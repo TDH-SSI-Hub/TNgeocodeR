@@ -1,16 +1,18 @@
-Package: TNgeocodeRbase
+Package: TNgeocodeR
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Geocode addresses in TN
 Version: 0.1.0
 Authors@R: c(
     person(
-      "Jane", "Doe",
-      email = "jane@example.com",
+      "Greg", "Chambers",
+      email = "greg.chambers@tn.gov",
       role = c("aut", "cre")
     )
   )
-Description: More about what it does (maybe more than one line).
-    Continuation lines should be indented.
-License: What license is it under?
+Description: Interface for TN Geocoding API and related functions
+License: MIT
 Encoding: UTF-8
 LazyData: true
+Depends: 
+    R (>= 3.5)
+RoxygenNote: 7.3.2
