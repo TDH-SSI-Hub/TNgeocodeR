@@ -13,6 +13,17 @@ Description: Interface for TN Geocoding API and related functions
 License: MIT
 Encoding: UTF-8
 LazyData: true
+Imports:
+	  sf,
+	  httr,
+	  data.table,
+	  jsonlite,
+    tidyr,
+    pkgbuild,
+    devtools,
+    dplyr,
+    rlang,
+    progress
 Depends: 
     R (>= 3.5)
 RoxygenNote: 7.3.2
