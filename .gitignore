@@ -35,3 +35,5 @@ po/*~
 # RStudio Connect folder
 rsconnect/
 TNgeocodeR.Rproj
+README.qmd
+README_files

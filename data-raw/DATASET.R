@@ -3,13 +3,13 @@ library(usethis)
 #library(TNTools)
 
 # county to region
-#tn_counties<-read.csv("J:\\SSI\\_Greg\\TNTools\\data-raw\\regions\\county_to_region.csv")
+#tn_counties<-read.csv("J:\\SSI\\_Greg\\TNgeocodeR\\data-raw\\regions\\county_to_region.csv")
 #use_data(tn_counties, overwrite = T)
 
 #library(TNgeocodeR)
 
 # Shapefiles
-#load('J:\\SSI\\_Greg\\TNTools\\data-raw\\Shapefiles\\county_shapefiles.rdata')
+#load('J:\\SSI\\_Greg\\TNgeocodeR\\data-raw\\Shapefiles\\county_shapefiles.rdata')
 #tn_county_shapefiles$Health_Region<-tn_county_to_region(tn_county_shapefiles$NAME)
 #use_data(tn_county_shapefiles, overwrite = T)
 
