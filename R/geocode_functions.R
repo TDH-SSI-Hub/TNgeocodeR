@@ -297,7 +297,86 @@ tn_county_to_region<-function(county){
   )
 }
 
+#' Standardize TN county names
+#' 
+#' Removes " county" and standardizes capitalization and spacing for TN counties.
+#'
+#' @param county vector of counties in TN
+#'
+#' @return vector of standardized county names
+#' @export
+tn_validate_county<-function(county){
+  county <- tolower(gsub(" |county", "", county, ignore.case = T))
+  c2r <- tn_counties
+  c2r$County_merge <- tolower(gsub(" ", "", c2r$County))
+  unlist(sapply(county, function(x) {
+    mc <- c2r$County[x == c2r$County_merge]
+    if (length(mc) == 0) {
+      return(NA)
+    }
+    else {
+      return(mc[1])
+    }
+  }, USE.NAMES = F))
+}
+
+#' Validate a county group dataframe
+#' 
+#' Check that a data frame meets the requirements to function in tn_county_group.
+#' There must be 
+#'
+#' @param county vector of counties in TN
+#'
+#' @return vector of standardized county names
+validate_county_group<-function(group_df){
+  cnames<-colnames(group_df)
+  if(length(cnames)==2 |
+     sum(grepl('county|fips',cnames,ignore.case = T))==1
+  ){
+    gvar<-cnames[!grepl('county|fips',cnames,ignore.case = T)]
+    return(gvar)
+  }else{
+    return(NA)
+  }
+}
 
 
-
-
+#' Merge county shapefiles by a group definition
+#' 
+#' When you provide a dataframe of counties and a grouping variable, this function will create a merged shapefile.
+#' You can specify a CRS to use, but the default is the CRS for tn_county_shapefiles.
+#'
+#' @param group_df Dataframe with exactly 2 columns. One must be the county name or FIPS code (column name must have 'county' or 'fips' in it). The other must be the grouping variable.
+#' @param crs EPSG code for the desired output CRS. NA defaults to the CRS for tn_county_shapefile (6576)
+#' @buffer buffer Amount to buffer each county before merging.
+#'
+#' @return Shapefile for the merged counties
+#' @export
+tn_county_group<-function(group_df, crs=NA, buffer=.000001){
+  
+  gvar<-validate_region_group(group_df)
+  
+  if(is.na(gvar)){
+    stop('Could not determine grouping variable. Grouping df must have 2 columns (county/fips and a grouping column)')
+  }
+  
+  cvar<-colnames(group_df)[colnames(group_df)!=gvar]
+  group_df$Group<-group_df[,gvar]
+  
+  if(grepl('county',cvar,ignore.case = T)){
+    group_df[,cvar]<-tn_validate_county(group_df[,cvar])
+    byx<-'NAME'
+  }else if(grepl('fips',cvar,ignore.case = T)){
+    group_df[,cvar]<-as.integer(group_df[,cvar])
+    tn_county_shapefiles$CNTY_FIPS<-as.integer(tn_county_shapefiles$CNTY_FIPS)
+    byx<-'CNTY_FIPS'
+  }
+  
+  if(is.na(crs)) crs <- st_crs(tn_county_shapefiles)
+  tn_county_shapefiles$NAME[tn_county_shapefiles$NAME=='De Kalb']<-'DeKalb'
+  
+  merge<-merge(tn_county_shapefiles,group_df, regions, by.x=byx,by.y=cvar, all=T) |>
+    dplyr::group_by(Group) |>
+    dplyr::summarise(geometry=st_union(st_buffer( geometry,dist=buffer))) |>
+    st_set_crs(crs)
+}
