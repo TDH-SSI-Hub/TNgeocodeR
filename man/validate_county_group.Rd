@@ -14,5 +14,5 @@ vector of standardized county names
 }
 \description{
 Check that a data frame meets the requirements to function in tn_county_group.
-There must be
+Dataframe with exactly 2 columns. One must be the county name or FIPS code (column name must have 'county' or 'fips' in it). The other must be the grouping variable.
 }

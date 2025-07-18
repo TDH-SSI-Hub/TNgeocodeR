@@ -323,7 +323,7 @@ tn_validate_county<-function(county){
 #' Validate a county group dataframe
 #' 
 #' Check that a data frame meets the requirements to function in tn_county_group.
-#' There must be 
+#' Dataframe with exactly 2 columns. One must be the county name or FIPS code (column name must have 'county' or 'fips' in it). The other must be the grouping variable.
 #'
 #' @param county vector of counties in TN
 #'
@@ -348,13 +348,13 @@ validate_county_group<-function(group_df){
 #'
 #' @param group_df Dataframe with exactly 2 columns. One must be the county name or FIPS code (column name must have 'county' or 'fips' in it). The other must be the grouping variable.
 #' @param crs EPSG code for the desired output CRS. NA defaults to the CRS for tn_county_shapefile (6576)
-#' @buffer buffer Amount to buffer each county before merging.
+#' @param buffer Amount to buffer each county before merging.
 #'
 #' @return Shapefile for the merged counties
 #' @export
 tn_county_group<-function(group_df, crs=NA, buffer=.000001){
   
-  gvar<-validate_region_group(group_df)
+  gvar<-validate_county_group(group_df)
   
   if(is.na(gvar)){
     stop('Could not determine grouping variable. Grouping df must have 2 columns (county/fips and a grouping column)')
