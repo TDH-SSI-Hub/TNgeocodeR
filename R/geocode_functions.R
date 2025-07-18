@@ -372,11 +372,11 @@ tn_county_group<-function(group_df, crs=NA, buffer=.000001){
     byx<-'CNTY_FIPS'
   }
   
-  if(is.na(crs)) crs <- st_crs(tn_county_shapefiles)
+  if(is.na(crs)) crs <- sf::st_crs(tn_county_shapefiles)
   tn_county_shapefiles$NAME[tn_county_shapefiles$NAME=='De Kalb']<-'DeKalb'
   
   merge<-merge(tn_county_shapefiles,group_df, regions, by.x=byx,by.y=cvar, all=T) |>
     dplyr::group_by(Group) |>
     dplyr::summarise(geometry=st_union(st_buffer( geometry,dist=buffer))) |>
-    st_set_crs(crs)
+    sf::st_set_crs(crs)
 }
