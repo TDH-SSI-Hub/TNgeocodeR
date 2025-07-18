@@ -377,6 +377,6 @@ tn_county_group<-function(group_df, crs=NA, buffer=.000001){
   
   merge<-merge(tn_county_shapefiles,group_df, regions, by.x=byx,by.y=cvar, all=T) |>
     dplyr::group_by(Group) |>
-    dplyr::summarise(geometry=st_union(st_buffer( geometry,dist=buffer))) |>
+    dplyr::summarise(geometry=sf::st_union(sf::st_buffer( geometry,dist=buffer))) |>
     sf::st_set_crs(crs)
 }
