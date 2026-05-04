@@ -1,97 +1,97 @@
-County,Health_Region
-Anderson,East
-Bedford,South Central
-Benton,Northwest
-Bledsoe,Southeast
-Blount,East
-Bradley,Southeast
-Campbell,East
-Cannon,Upper Cumberland
-Carroll,Northwest
-Carter,Northeast
-Cheatham,Mid-Cumberland
-Chester,Southwest
-Claiborne,East
-Clay,Upper Cumberland
-Cocke,East
-Coffee,South Central
-Crockett,Northwest
-Cumberland,Upper Cumberland
-Davidson,Davidson
-Decatur,Southwest
-DeKalb,Upper Cumberland
-Dickson,Mid-Cumberland
-Dyer,Northwest
-Fayette,Southwest
-Fentress,Upper Cumberland
-Franklin,Southeast
-Gibson,Northwest
-Giles,South Central
-Grainger,East
-Greene,Northeast
-Grundy,Southeast
-Hamblen,East
-Hamilton,Hamilton
-Hancock,Northeast
-Hardeman,Southwest
-Hardin,Southwest
-Hawkins,Northeast
-Haywood,Southwest
-Henderson,Southwest
-Henry,Northwest
-Hickman,South Central
-Houston,Mid-Cumberland
-Humphreys,Mid-Cumberland
-Jackson,Upper Cumberland
-Jefferson,East
-Johnson,Northeast
-Knox,Knox
-Lake,Northwest
-Lauderdale,Southwest
-Lawrence,South Central
-Lewis,South Central
-Lincoln,South Central
-Loudon,East
-McMinn,Southeast
-McNairy,Southwest
-Macon,Upper Cumberland
-Madison,Madison
-Marion,Southeast
-Marshall,South Central
-Maury,South Central
-Meigs,Southeast
-Monroe,East
-Montgomery,Mid-Cumberland
-Moore,South Central
-Morgan,East
-Obion,Northwest
-Overton,Upper Cumberland
-Perry,South Central
-Pickett,Upper Cumberland
-Polk,Southeast
-Putnam,Upper Cumberland
-Rhea,Southeast
-Roane,East
-Robertson,Mid-Cumberland
-Rutherford,Mid-Cumberland
-Scott,East
-Sequatchie,Southeast
-Sevier,East
-Shelby,Shelby
-Smith,Upper Cumberland
-Stewart,Mid-Cumberland
-Sullivan,Sullivan
-Sumner,Mid-Cumberland
-Tipton,Southwest
-Trousdale,Mid-Cumberland
-Unicoi,Northeast
-Union,East
-Van Buren,Upper Cumberland
-Warren,Upper Cumberland
-Washington,Northeast
-Wayne,South Central
-Weakley,Northwest
-White,Upper Cumberland
-Williamson,Mid-Cumberland
-Wilson,Mid-Cumberland
-Unknown,Unknown
+County,Health_Region,Health_Region_Short
+Anderson,East,ETR
+Bedford,South Central,SCR
+Benton,Northwest,NER
+Bledsoe,Southeast,SER
+Blount,East,ETR
+Bradley,Southeast,SER
+Campbell,East,ETR
+Cannon,Upper Cumberland,UCR
+Carroll,Northwest,NER
+Carter,Northeast,NER
+Cheatham,Mid-Cumberland,MCR
+Chester,Southwest,SWR
+Claiborne,East,ETR
+Clay,Upper Cumberland,UCR
+Cocke,East,ETR
+Coffee,South Central,SCR
+Crockett,Northwest,NER
+Cumberland,Upper Cumberland,UCR
+Davidson,Davidson,NDR
+Decatur,Southwest,SWR
+DeKalb,Upper Cumberland,UCR
+Dickson,Mid-Cumberland,MCR
+Dyer,Northwest,NER
+Fayette,Southwest,SWR
+Fentress,Upper Cumberland,UCR
+Franklin,Southeast,SER
+Gibson,Northwest,NER
+Giles,South Central,SCR
+Grainger,East,ETR
+Greene,Northeast,NER
+Grundy,Southeast,SER
+Hamblen,East,ETR
+Hamilton,Hamilton,CHR
+Hancock,Northeast,NER
+Hardeman,Southwest,SWR
+Hardin,Southwest,SWR
+Hawkins,Northeast,NER
+Haywood,Southwest,SWR
+Henderson,Southwest,SWR
+Henry,Northwest,NER
+Hickman,South Central,SCR
+Houston,Mid-Cumberland,MCR
+Humphreys,Mid-Cumberland,MCR
+Jackson,Upper Cumberland,UCR
+Jefferson,East,ETR
+Johnson,Northeast,NER
+Knox,Knox,KKR
+Lake,Northwest,NER
+Lauderdale,Southwest,SWR
+Lawrence,South Central,SCR
+Lewis,South Central,SCR
+Lincoln,South Central,SCR
+Loudon,East,ETR
+Macon,Upper Cumberland,UCR
+Madison,Madison,JMR
+Marion,Southeast,SER
+Marshall,South Central,SCR
+Maury,South Central,SCR
+McMinn,Southeast,SER
+McNairy,Southwest,SWR
+Meigs,Southeast,SER
+Monroe,East,ETR
+Montgomery,Mid-Cumberland,MCR
+Moore,South Central,SCR
+Morgan,East,ETR
+Obion,Northwest,NER
+Overton,Upper Cumberland,UCR
+Perry,South Central,SCR
+Pickett,Upper Cumberland,UCR
+Polk,Southeast,SER
+Putnam,Upper Cumberland,UCR
+Rhea,Southeast,SER
+Roane,East,ETR
+Robertson,Mid-Cumberland,MCR
+Rutherford,Mid-Cumberland,MCR
+Scott,East,ETR
+Sequatchie,Southeast,SER
+Sevier,East,ETR
+Shelby,Shelby,MSR
+Smith,Upper Cumberland,UCR
+Stewart,Mid-Cumberland,MCR
+Sullivan,Sullivan,SUL
+Sumner,Mid-Cumberland,MCR
+Tipton,Southwest,SWR
+Trousdale,Mid-Cumberland,MCR
+Unicoi,Northeast,NER
+Union,East,ETR
+Unknown,Unknown,UNK
+Van Buren,Upper Cumberland,UCR
+Warren,Upper Cumberland,UCR
+Washington,Northeast,NER
+Wayne,South Central,SCR
+Weakley,Northwest,NER
+White,Upper Cumberland,UCR
+Williamson,Mid-Cumberland,MCR
+Wilson,Mid-Cumberland,MCR

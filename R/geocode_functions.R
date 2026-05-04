@@ -279,15 +279,16 @@ tn_geocode_vector<-function(x
 #' Convert TN counties to health regions
 #'
 #' @param county vector of counties in TN
+#' @param abbr T/F. Should the abbreviation be returned instead of the region name?
 #'
 #' @return vector of health regions
 #' @export
-tn_county_to_region<-function(county){
+tn_county_to_region<-function(county, abbr=F){
   county<-tolower(gsub(' |county','',county, ignore.case = T))
   c2r<-tn_counties
   c2r$County<-tolower(gsub(' ','',c2r$County))
   unlist(sapply(county, function(x) {
-    mc<-c2r$Health_Region[x==c2r$County]
+    mc<-c2r[x==c2r$County,ifelse(abbr,'Health_Region_Short','Health_Region')]
     if(length(mc)==0){
       return(NA)
     }else{

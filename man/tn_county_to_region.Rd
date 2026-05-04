@@ -4,10 +4,12 @@
 \alias{tn_county_to_region}
 \title{Convert TN counties to health regions}
 \usage{
-tn_county_to_region(county)
+tn_county_to_region(county, abbr = F)
 }
 \arguments{
 \item{county}{vector of counties in TN}
+
+\item{abbr}{T/F. Should the abbreviation be returned instead of the region name?}
 }
 \value{
 vector of health regions
