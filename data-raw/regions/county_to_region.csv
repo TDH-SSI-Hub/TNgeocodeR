@@ -1,31 +1,31 @@
 County,Health_Region,Health_Region_Short
 Anderson,East,ETR
 Bedford,South Central,SCR
-Benton,Northwest,NER
+Benton,West,WTR
 Bledsoe,Southeast,SER
 Blount,East,ETR
 Bradley,Southeast,SER
 Campbell,East,ETR
 Cannon,Upper Cumberland,UCR
-Carroll,Northwest,NER
+Carroll,West,WTR
 Carter,Northeast,NER
 Cheatham,Mid-Cumberland,MCR
-Chester,Southwest,WTR
+Chester,West,WTR
 Claiborne,East,ETR
 Clay,Upper Cumberland,UCR
 Cocke,East,ETR
 Coffee,South Central,SCR
-Crockett,Northwest,NER
+Crockett,West,WTR
 Cumberland,Upper Cumberland,UCR
 Davidson,Davidson,NDR
-Decatur,Southwest,WTR
+Decatur,West,WTR
 DeKalb,Upper Cumberland,UCR
 Dickson,Mid-Cumberland,MCR
-Dyer,Northwest,NER
-Fayette,Southwest,WTR
+Dyer,West,WTR
+Fayette,West,WTR
 Fentress,Upper Cumberland,UCR
 Franklin,Southeast,SER
-Gibson,Northwest,NER
+Gibson,West,WTR
 Giles,South Central,SCR
 Grainger,East,ETR
 Greene,Northeast,NER
@@ -33,12 +33,12 @@ Grundy,Southeast,SER
 Hamblen,East,ETR
 Hamilton,Hamilton,CHR
 Hancock,Northeast,NER
-Hardeman,Southwest,WTR
-Hardin,Southwest,WTR
+Hardeman,West,WTR
+Hardin,West,WTR
 Hawkins,Northeast,NER
-Haywood,Southwest,WTR
-Henderson,Southwest,WTR
-Henry,Northwest,NER
+Haywood,West,WTR
+Henderson,West,WTR
+Henry,West,WTR
 Hickman,South Central,SCR
 Houston,Mid-Cumberland,MCR
 Humphreys,Mid-Cumberland,MCR
@@ -46,8 +46,8 @@ Jackson,Upper Cumberland,UCR
 Jefferson,East,ETR
 Johnson,Northeast,NER
 Knox,Knox,KKR
-Lake,Northwest,NER
-Lauderdale,Southwest,WTR
+Lake,West,WTR
+Lauderdale,West,WTR
 Lawrence,South Central,SCR
 Lewis,South Central,SCR
 Lincoln,South Central,SCR
@@ -58,13 +58,13 @@ Marion,Southeast,SER
 Marshall,South Central,SCR
 Maury,South Central,SCR
 McMinn,Southeast,SER
-McNairy,Southwest,WTR
+McNairy,West,WTR
 Meigs,Southeast,SER
 Monroe,East,ETR
 Montgomery,Mid-Cumberland,MCR
 Moore,South Central,SCR
 Morgan,East,ETR
-Obion,Northwest,NER
+Obion,West,WTR
 Overton,Upper Cumberland,UCR
 Perry,South Central,SCR
 Pickett,Upper Cumberland,UCR
@@ -82,7 +82,7 @@ Smith,Upper Cumberland,UCR
 Stewart,Mid-Cumberland,MCR
 Sullivan,Sullivan,SUL
 Sumner,Mid-Cumberland,MCR
-Tipton,Southwest,WTR
+Tipton,West,WTR
 Trousdale,Mid-Cumberland,MCR
 Unicoi,Northeast,NER
 Union,East,ETR
@@ -91,7 +91,7 @@ Van Buren,Upper Cumberland,UCR
 Warren,Upper Cumberland,UCR
 Washington,Northeast,NER
 Wayne,South Central,SCR
-Weakley,Northwest,NER
+Weakley,West,WTR
 White,Upper Cumberland,UCR
 Williamson,Mid-Cumberland,MCR
 Wilson,Mid-Cumberland,MCR
