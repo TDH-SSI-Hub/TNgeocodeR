@@ -59,7 +59,7 @@ tn_api_outputs<-function(special_cases=F){
   ret_val
 }
 
-
+df<-data.frame(Address='710 James Robertson Pkwy',City='Nashville',State='TN',Postal=37221)
 #' Function to interface with the TN geocoder.
 #'
 #' Interface to https://tnmap.tn.gov/arcgis/rest/services/LOCATORS/TN_COMPOSITE/GeocodeServer/geocodeAddresses
@@ -176,6 +176,7 @@ tn_geocode_addresses<-function(df,
     total = batch_num, clear = FALSE, width= 80)
 
   pb$tick(0)
+  i<-1
   for(i in 1:batch_num){
     # Limit to current batch
     jlist<-geo_df[((i-1)*batch_size+1):min(i*batch_size,nrow(geo_df)),]
@@ -194,12 +195,24 @@ tn_geocode_addresses<-function(df,
                , outfields=outfields
     )
 
+    response<-NA
     # POST
+    rep_attempts<-1
+    while(class(response)=='logical' & rep_attempts<=5){
+      
+    tryCatch({
     response <- httr::POST(tn_geocoder_url('geocodeAddresses')
                      , body = body
                      , encode = 'form'
                      #, verbose()
     )
+    }, error=function(e){
+      #message('There was an error!')
+    })
+    
+      rep_attempts<-rep_attempts+1
+    
+    }
 
     # Parse the JSON response
     res_df<-tidyr::unnest(as.data.frame(jsonlite::fromJSON(rawToChar(response$content))),everything())
@@ -277,6 +290,8 @@ tn_geocode_vector<-function(x
 
 
 #' Convert TN counties to health regions
+#' 
+#' This is a more in depth explanation of the function, with multiple sentences if I want it.
 #'
 #' @param county vector of counties in TN
 #' @param abbr T/F. Should the abbreviation be returned instead of the region name?
