@@ -5,7 +5,7 @@
 \alias{tn_census_shapefiles}
 \title{Shapefiles for each census tract in TN}
 \format{
-An object of class \code{sf} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 33 rows and 14 columns.
+An object of class \code{sf} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 1701 rows and 13 columns.
 }
 \usage{
 tn_census_shapefiles

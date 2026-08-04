@@ -5,7 +5,7 @@
 \alias{tn_counties}
 \title{Dataframe of counties and their health regions}
 \format{
-An object of class \code{data.frame} with 96 rows and 2 columns.
+An object of class \code{data.frame} with 96 rows and 3 columns.
 }
 \usage{
 tn_counties

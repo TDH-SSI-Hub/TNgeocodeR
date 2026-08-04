@@ -15,5 +15,5 @@ tn_county_to_region(county, abbr = F)
 vector of health regions
 }
 \description{
-Convert TN counties to health regions
+This is a more in depth explanation of the function, with multiple sentences if I want it.
 }

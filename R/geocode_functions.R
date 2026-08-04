@@ -59,7 +59,6 @@ tn_api_outputs<-function(special_cases=F){
   ret_val
 }
 
-df<-data.frame(Address='710 James Robertson Pkwy',City='Nashville',State='TN',Postal=37221)
 #' Function to interface with the TN geocoder.
 #'
 #' Interface to https://tnmap.tn.gov/arcgis/rest/services/LOCATORS/TN_COMPOSITE/GeocodeServer/geocodeAddresses
