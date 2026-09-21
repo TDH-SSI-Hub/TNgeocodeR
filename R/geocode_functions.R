@@ -202,7 +202,7 @@ tn_geocode_addresses<-function(df,
     while(class(response)=='logical' & rep_attempts<=5){
       
     tryCatch({
-    response <- httr::POST(tn_geocoder_url('geocodeAddresses')
+    response <- httr::POST(tn_geocoder_url(service='geocodeAddresses')
                      , body = body
                      , encode = 'form'
                      #, verbose()
