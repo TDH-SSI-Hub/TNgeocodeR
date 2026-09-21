@@ -4,11 +4,13 @@
 \alias{tn_api_outputs}
 \title{Valid output fields for tn_geocode_addresses()}
 \usage{
-tn_api_outputs(special_cases = F)
+tn_api_outputs(special_cases = F, locator = "TN_COMPOSITE")
 }
 \arguments{
 \item{special_cases}{T/F Include output aliases such as Street, Lat, Lon which are not handled by the geocoder,
 but which tn_geocode_addresses() handles.}
+
+\item{locator}{TN_COMPOSITE or TN_ADDRESSPOINTS}
 }
 \value{
 Vector of names

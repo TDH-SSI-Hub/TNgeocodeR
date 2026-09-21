@@ -35,11 +35,12 @@ tn_geocoder_specialcases<-function(){
 #'
 #' @param special_cases T/F Include output aliases such as Street, Lat, Lon which are not handled by the geocoder,
 #'  but which tn_geocode_addresses() handles.
+#' @param locator TN_COMPOSITE or TN_ADDRESSPOINTS
 #'
 #' @return Vector of names
 #' @export
-tn_api_inputs<-function(special_cases=F){
-  test<-httr::POST('https://tnmap.tn.gov/arcgis/rest/services/LOCATORS/TN_ADDRESSPOINTS/GeocodeServer', body=list(f='pjson'))
+tn_api_inputs<-function(special_cases=F, locator='TN_COMPOSITE'){
+  test<-httr::POST(tn_geocoder_url(locator), body=list(f='pjson'))
   test_res<-jsonlite::fromJSON(rawToChar(test$content))
   ret_val<-unlist(strsplit(unique(c(test_res$addressFields$name,test_res$addressFields$alias)),' or '))
   if(special_cases) ret_val<-c(tn_geocoder_specialcases()$alias,ret_val)
@@ -50,11 +51,12 @@ tn_api_inputs<-function(special_cases=F){
 #'
 #' @param special_cases T/F Include output aliases such as Street, Lat, Lon which are not handled by the geocoder,
 #'  but which tn_geocode_addresses() handles.
+#' @param locator TN_COMPOSITE or TN_ADDRESSPOINTS
 #'
 #' @return Vector of names
 #' @export
-tn_api_outputs<-function(special_cases=F){
-  test<-httr::POST('https://tnmap.tn.gov/arcgis/rest/services/LOCATORS/TN_ADDRESSPOINTS/GeocodeServer', body=list(f='pjson'))
+tn_api_outputs<-function(special_cases=F, locator='TN_COMPOSITE'){
+  test<-httr::POST(tn_geocoder_url(locator), body=list(f='pjson'))
   test_res<-jsonlite::fromJSON(rawToChar(test$content))
   ret_val<-unlist(strsplit(unique(c(test_res$candidateFields$name,test_res$candidateFields$alias)),' or '))
   if(special_cases) ret_val<-c(tn_geocoder_specialcases()$alias,ret_val)
@@ -88,6 +90,7 @@ tn_geocode_addresses<-function(df,
                           )
                           , return_fields=c('Score','Match_addr','County','X','Y')
                           , exclude_default_fields=T
+                          , locator='TN_COMPOSITE'
 ){
 
 
@@ -99,8 +102,8 @@ tn_geocode_addresses<-function(df,
   }
 
   # Load valid inputs and outputs
-  valid_in<-tn_api_inputs(T)
-  valid_out<-tn_api_outputs(T)
+  valid_in<-tn_api_inputs(T,locator)
+  valid_out<-tn_api_outputs(T,locator)
 
   # Load special case info
   special_in<-tn_geocoder_specialcases()$alias
@@ -202,7 +205,7 @@ tn_geocode_addresses<-function(df,
     while(class(response)=='logical' & rep_attempts<=5){
       
     tryCatch({
-    response <- httr::POST(tn_geocoder_url(service='geocodeAddresses')
+    response <- httr::POST(tn_geocoder_url(locator=locator,service='geocodeAddresses')
                      , body = body
                      , encode = 'form'
                      #, verbose()
@@ -279,6 +282,7 @@ tn_geocode_addresses<-function(df,
 #'  Invalid fields generate a warning and will be ignored.
 #' @param exclude_default_fields T/F Should default geocoding fields not listed in return_fields be excluded from the output?
 #'  Default fields include: Address, X, Y, and Score. This parameter is ignored if return_fields is '*','','All','None', or NA.
+#' @param locator Which locator to use? Defaults to TN_COMPOSITE, but also accepts TN_ADDRESSPOINTS
 #'
 #' @return Dataframe with added columns from geocoder
 #' @export

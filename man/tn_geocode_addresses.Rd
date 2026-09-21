@@ -8,7 +8,8 @@ tn_geocode_addresses(
   df,
   match_on = c(Address = "Address", City = "City", State = "State", Postal = "Postal"),
   return_fields = c("Score", "Match_addr", "County", "X", "Y"),
-  exclude_default_fields = T
+  exclude_default_fields = T,
+  locator = "TN_COMPOSITE"
 )
 }
 \arguments{

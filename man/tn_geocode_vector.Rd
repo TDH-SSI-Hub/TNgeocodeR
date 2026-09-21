@@ -19,6 +19,8 @@ Invalid fields generate a warning and will be ignored.}
 
 \item{exclude_default_fields}{T/F Should default geocoding fields not listed in return_fields be excluded from the output?
 Default fields include: Address, X, Y, and Score. This parameter is ignored if return_fields is '*','','All','None', or NA.}
+
+\item{locator}{Which locator to use? Defaults to TN_COMPOSITE, but also accepts TN_ADDRESSPOINTS}
 }
 \value{
 Dataframe with added columns from geocoder
