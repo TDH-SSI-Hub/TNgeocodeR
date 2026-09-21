@@ -4,9 +4,11 @@
 \alias{tn_geocoder_url}
 \title{API URLs for the TN geocoder}
 \usage{
-tn_geocoder_url(service = NA)
+tn_geocoder_url(locator = "TN_COMPOSITE", service = NA)
 }
 \arguments{
+\item{locator}{Which geocoding locator to use. Must be TN_Composite, or TN_ADDRESSPOINTS}
+
 \item{service}{NA or geocodeAddresses. If NA, returns the URL for the geocode server.
 If geocodeAddresses, returns URL for geocode addresses service.}
 }
